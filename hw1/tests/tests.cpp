@@ -19,6 +19,12 @@ TEST(_015_TEST, SquareEquationSolver) {
   EXPECT_LE(abs(x1 - (-5)), EPS);
 }
 
+TEST(_100_TEST, SquareEquationSolver) {
+  float x1, x2;
+  EXPECT_EQ(1, solverSquareEquation(1, 0, 0, &x1, &x2));
+  EXPECT_LE(abs(x1), EPS);
+}
+
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

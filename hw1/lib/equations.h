@@ -2,13 +2,12 @@
 #include <climits>
 #include <cmath>
 
-
 //------------------------------------------------------------------------------
 //! Solves a linear equation ax + b = 0
 //!
 //! @param [in] a a-coefficient
 //! @param [in] b b-coefficient
-//! @param [ut] x Pointer to the first root
+//! @param [out] x Pointer to the first root
 //!
 //! @return Number of roots
 //!
@@ -16,6 +15,10 @@
 //------------------------------------------------------------------------------
 
 int solverLinearEquation(float a, float b, float* x) {
+  if (x == nullptr) {
+    printf("Bad pointer to the root!\n");
+    exit(1);
+  }
   if (a == 0) {
     if (b == 0)
       return INT_MAX;
@@ -41,6 +44,14 @@ int solverLinearEquation(float a, float b, float* x) {
 //------------------------------------------------------------------------------
 
 int solverSquareEquation(float a, float b, float c, float* x1, float* x2) {
+  if (x1 == nullptr || x2 == nullptr) {
+    printf("Bad pointers to the roots!\n");
+    exit(1);
+  }
+  if (x1 == x2) {
+    printf("Pointers are the same!\n");
+    exit(1);
+  }
   if (a == 0)
     return solverLinearEquation(b, c, x1);
   float d = b * b - 4 * a * c;

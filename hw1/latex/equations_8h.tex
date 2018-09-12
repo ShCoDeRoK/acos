@@ -1,0 +1,65 @@
+\hypertarget{equations_8h}{}\section{lib/equations.h File Reference}
+\label{equations_8h}\index{lib/equations.\+h@{lib/equations.\+h}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{equations_8h_ace291efc8250a5022a17bf1cb02541d1}{solver\+Linear\+Equation}} (float a, float b, float $\ast$x)
+\item 
+int \mbox{\hyperlink{equations_8h_a9ccae1da2a1580c8009ec2807cdc9a53}{solver\+Square\+Equation}} (float a, float b, float c, float $\ast$x1, float $\ast$x2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{equations_8h_ace291efc8250a5022a17bf1cb02541d1}\label{equations_8h_ace291efc8250a5022a17bf1cb02541d1}} 
+\index{equations.\+h@{equations.\+h}!solver\+Linear\+Equation@{solver\+Linear\+Equation}}
+\index{solver\+Linear\+Equation@{solver\+Linear\+Equation}!equations.\+h@{equations.\+h}}
+\subsubsection{\texorpdfstring{solver\+Linear\+Equation()}{solverLinearEquation()}}
+{\footnotesize\ttfamily int solver\+Linear\+Equation (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b,  }\item[{float $\ast$}]{x }\end{DoxyParamCaption})}
+
+Solves a linear equation ax + b = 0
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & a-\/coefficient \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & b-\/coefficient \\
+\hline
+ & {\em \mbox{[}ut\mbox{]}} & x Pointer to the first root\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of roots
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+In case of infinite number of roots, returns I\+N\+T\+\_\+\+M\+AX. 
+\end{DoxyNote}
+\mbox{\Hypertarget{equations_8h_a9ccae1da2a1580c8009ec2807cdc9a53}\label{equations_8h_a9ccae1da2a1580c8009ec2807cdc9a53}} 
+\index{equations.\+h@{equations.\+h}!solver\+Square\+Equation@{solver\+Square\+Equation}}
+\index{solver\+Square\+Equation@{solver\+Square\+Equation}!equations.\+h@{equations.\+h}}
+\subsubsection{\texorpdfstring{solver\+Square\+Equation()}{solverSquareEquation()}}
+{\footnotesize\ttfamily int solver\+Square\+Equation (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b,  }\item[{float}]{c,  }\item[{float $\ast$}]{x1,  }\item[{float $\ast$}]{x2 }\end{DoxyParamCaption})}
+
+Solves a square equation ax$^\wedge$2 + bx + c = 0
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & a-\/coefficient \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & b-\/coefficient \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & c-\/coefficient \\
+\hline
+\mbox{\texttt{ out}}  & {\em x1} & Pointer to the first root \\
+\hline
+\mbox{\texttt{ out}}  & {\em x2} & Pointer to the second root\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of roots
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+In case of infinite number of roots, returns I\+N\+T\+\_\+\+M\+AX. 
+\end{DoxyNote}
