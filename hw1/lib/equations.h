@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <climits>
 #include <cmath>
+#include <cfloat>
 
 //------------------------------------------------------------------------------
 //! Solves a linear equation ax + b = 0
@@ -19,8 +20,8 @@ int solverLinearEquation(float a, float b, float* x) {
     printf("Bad pointer to the root!\n");
     exit(1);
   }
-  if (a == 0) {
-    if (b == 0)
+  if (abs(a) < FLT_EPSILON) {
+    if (abs(b) < FLT_EPSILON)
       return INT_MAX;
     else
       return 0;
@@ -52,10 +53,10 @@ int solverSquareEquation(float a, float b, float c, float* x1, float* x2) {
     printf("Pointers are the same!\n");
     exit(1);
   }
-  if (a == 0)
+  if (abs(a) < FLT_EPSILON)
     return solverLinearEquation(b, c, x1);
   float d = b * b - 4 * a * c;
-  if (d < 0)
+  if (d <= -FLT_EPSILON)
     return 0;  
   *x1 = (-b + sqrt(d)) / (2 * a);
   if (d == 0)

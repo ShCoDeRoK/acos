@@ -12,7 +12,7 @@
 //------------------------------------------------------------------------------
 
 void input(float* a, float* b, float* c) {
-  printf("Enter coefficients of square equation: ");
+  printf("Enter coefficients of square equation(three float numbers): ");
   int num_success = scanf("%f %f %f", a, b, c);
   if (num_success != 3) {
     printf("Wrond data in input!");
