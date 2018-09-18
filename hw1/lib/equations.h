@@ -59,7 +59,7 @@ int solverSquareEquation(float a, float b, float c, float* x1, float* x2) {
   if (d <= -FLT_EPSILON)
     return 0;  
   *x1 = (-b + sqrt(d)) / (2 * a);
-  if (d == 0)
+  if (abs(d) < FLT_EPSILON)
     return 1;
   *x2 = (-b - sqrt(d)) / (2 * a);
   return 2;
