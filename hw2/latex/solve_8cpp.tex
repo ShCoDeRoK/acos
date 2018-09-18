@@ -1,0 +1,79 @@
+\hypertarget{solve_8cpp}{}\section{solve.\+cpp File Reference}
+\label{solve_8cpp}\index{solve.\+cpp@{solve.\+cpp}}
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lib/sorter.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{solve_8cpp_a291ca9c721cd6133874d29cdd93a8829}{input\+File}} (std\+::string s)
+\item 
+char $\ast$ \mbox{\hyperlink{solve_8cpp_a3652940f45ac86af7d4718b5ba20a950}{get\+Text}} (F\+I\+LE $\ast$file\+\_\+pointer, size\+\_\+t $\ast$file\+\_\+size)
+\item 
+char $\ast$$\ast$ \mbox{\hyperlink{solve_8cpp_a45f0408ccfc7dce6b2bac8f4a1791ca4}{get\+Indices}} (char $\ast$chars, size\+\_\+t file\+\_\+size, size\+\_\+t \&word\+\_\+counter)
+\item 
+void \mbox{\hyperlink{solve_8cpp_a0acb882a8bd8a68e17a60ff70bae76f0}{out}} (char $\ast$chars, char $\ast$$\ast$indices, size\+\_\+t word\+\_\+counter, F\+I\+LE $\ast$file\+\_\+pointer)
+\item 
+int \mbox{\hyperlink{solve_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{solve_8cpp_a45f0408ccfc7dce6b2bac8f4a1791ca4}\label{solve_8cpp_a45f0408ccfc7dce6b2bac8f4a1791ca4}} 
+\index{solve.\+cpp@{solve.\+cpp}!get\+Indices@{get\+Indices}}
+\index{get\+Indices@{get\+Indices}!solve.\+cpp@{solve.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Indices()}{getIndices()}}
+{\footnotesize\ttfamily char$\ast$$\ast$ get\+Indices (\begin{DoxyParamCaption}\item[{char $\ast$}]{chars,  }\item[{size\+\_\+t}]{file\+\_\+size,  }\item[{size\+\_\+t \&}]{word\+\_\+counter }\end{DoxyParamCaption})}
+
+Return array of pointers to beginnings of all words
+
+\mbox{[}in\mbox{]} chars Pointer to array of characters from a file  \mbox{[}in\mbox{]} file\+\_\+size Size of file  \mbox{[}out\mbox{]} word\+\_\+counter Number of words
+
+\begin{DoxyReturn}{Returns}
+char$\ast$$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solve_8cpp_a3652940f45ac86af7d4718b5ba20a950}\label{solve_8cpp_a3652940f45ac86af7d4718b5ba20a950}} 
+\index{solve.\+cpp@{solve.\+cpp}!get\+Text@{get\+Text}}
+\index{get\+Text@{get\+Text}!solve.\+cpp@{solve.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Text()}{getText()}}
+{\footnotesize\ttfamily char$\ast$ get\+Text (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file\+\_\+pointer,  }\item[{size\+\_\+t $\ast$}]{file\+\_\+size }\end{DoxyParamCaption})}
+
+Read text from file
+
+\mbox{[}in\mbox{]} file\+\_\+pointer Pointer to file  \mbox{[}out\mbox{]} file\+\_\+size Size of file
+
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solve_8cpp_a291ca9c721cd6133874d29cdd93a8829}\label{solve_8cpp_a291ca9c721cd6133874d29cdd93a8829}} 
+\index{solve.\+cpp@{solve.\+cpp}!input\+File@{input\+File}}
+\index{input\+File@{input\+File}!solve.\+cpp@{solve.\+cpp}}
+\subsubsection{\texorpdfstring{input\+File()}{inputFile()}}
+{\footnotesize\ttfamily char$\ast$ input\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+Input name of file
+
+\mbox{[}in\mbox{]} s string which will be printed \begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solve_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{solve_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{solve.\+cpp@{solve.\+cpp}!main@{main}}
+\index{main@{main}!solve.\+cpp@{solve.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{solve_8cpp_a0acb882a8bd8a68e17a60ff70bae76f0}\label{solve_8cpp_a0acb882a8bd8a68e17a60ff70bae76f0}} 
+\index{solve.\+cpp@{solve.\+cpp}!out@{out}}
+\index{out@{out}!solve.\+cpp@{solve.\+cpp}}
+\subsubsection{\texorpdfstring{out()}{out()}}
+{\footnotesize\ttfamily void out (\begin{DoxyParamCaption}\item[{char $\ast$}]{chars,  }\item[{char $\ast$$\ast$}]{indices,  }\item[{size\+\_\+t}]{word\+\_\+counter,  }\item[{F\+I\+LE $\ast$}]{file\+\_\+pointer }\end{DoxyParamCaption})}
+
+Print sorted text
+
+\mbox{[}in\mbox{]} chars Pointer to array of characters from a file  \mbox{[}in\mbox{]} indices Pointer to array of pointers to words from text  \mbox{[}in\mbox{]} word\+\_\+counter Number of words  \mbox{[}in\mbox{]} file\+\_\+pointer Pointer to file
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
