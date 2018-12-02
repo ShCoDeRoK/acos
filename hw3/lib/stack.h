@@ -2,6 +2,11 @@
 
 template <typename T>
 class Stack {
+
+  const int INITIAL_CHECKSUM = 16;
+  const int START_CANERY = 15;
+  const int FINISH_CANERY = 14;
+
   char checksum_;
   T* buffer_;
   size_t size_;
@@ -45,7 +50,7 @@ class Stack {
     }
     
     char* current_buffer = (char*)(buffer_ + 1);
-    char current_checksum = 16; //initial random value
+    char current_checksum = INITIAL_CHECKSUM; //initial random value
     for (size_t i = 0; i < sizeof(T) * size_; ++i) {
       current_checksum ^= current_buffer[i];
     }
@@ -69,13 +74,13 @@ class Stack {
     buffer_ = new T[2 + capacity_];
     
     if (debug) {
-      checksum_ = 16; //random value
+      checksum_ = INITIAL_CHECKSUM; //random value
       first_ = (char*)calloc(1, sizeof(T));
       last_ = (char*)calloc(1, sizeof(T));
 
       for (size_t i = 0; i < sizeof(T); ++i) {
-        first_[i] = 14; //random value
-        last_[i] = 15; //random value
+        first_[i] = START_CANERY; //random value
+        last_[i] = FINISH_CANERY; //random value
       }
       memcpy(buffer_, first_, sizeof(T));
       memcpy(buffer_ + 2 + capacity_ - 1, last_, sizeof(T));

@@ -13,7 +13,7 @@
 
 char* inputFile(std::string s) {
   printf("%s", s.c_str());
-  char* name = (char*)malloc((FILENAME_MAX + 1) * sizeof(char));
+  char* name = (char*)calloc((FILENAME_MAX + 1), sizeof(char));
   scanf("%s", name);
   return name;
 }
@@ -31,7 +31,7 @@ char* getText(FILE* file_pointer, size_t* file_size) {
   struct stat buffer;
   fstat(fileno(file_pointer), &buffer);
   *file_size = buffer.st_size;
-  char* chars = (char*)malloc((buffer.st_size + 1) * sizeof(char));
+  char* chars = (char*)calloc((buffer.st_size + 1), sizeof(char));
   fread(chars, sizeof(char), buffer.st_size, file_pointer);
   return chars;
 }
